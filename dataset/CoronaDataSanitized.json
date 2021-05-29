@@ -9,8 +9,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "coronaSanatized",
-			"table": "REST resource"
+			"schema": "corona",
+			"table": "sanatized"
 		}
 	}
 }
