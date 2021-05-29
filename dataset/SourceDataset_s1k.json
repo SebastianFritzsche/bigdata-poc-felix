@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_s1k",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CoronaRestService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json"
+		},
+		"schema": []
+	}
+}
