@@ -7,7 +7,91 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "IdBundesland",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Bundesland",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Landkreis",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Altergruppe",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Geschlecht",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AnzahlFall",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "AnzahlTodesfall",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ObjectId",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Meldedatum",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "IdLandkreis",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Datenstand",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NeuerFall",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "NeuerTodesfall",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Refdatum",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "NeuGenesen",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "AnzahlGenesen",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "istErkrungsbegin",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Altergruppe2",
+				"type": "nvarchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "corona",
 			"table": "REST resource"

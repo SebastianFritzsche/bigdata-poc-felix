@@ -36,13 +36,12 @@
 					},
 					"enableStaging": false,
 					"enableSkipIncompatibleRow": true,
-					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['IdBundesland']"
+									"path": "['attributes']['IdBundesland']"
 								},
 								"sink": {
 									"name": "IdBundesland",
@@ -51,7 +50,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Bundesland']"
+									"path": "['attributes']['Bundesland']"
 								},
 								"sink": {
 									"name": "Bundesland",
@@ -60,7 +59,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Landkreis']"
+									"path": "['attributes']['Landkreis']"
 								},
 								"sink": {
 									"name": "Landkreis",
@@ -69,7 +68,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Altersgruppe']"
+									"path": "['attributes']['Altersgruppe']"
 								},
 								"sink": {
 									"name": "Altergruppe",
@@ -78,7 +77,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Geschlecht']"
+									"path": "['attributes']['Geschlecht']"
 								},
 								"sink": {
 									"name": "Geschlecht",
@@ -87,7 +86,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['AnzahlFall']"
+									"path": "['attributes']['AnzahlFall']"
 								},
 								"sink": {
 									"name": "AnzahlFall",
@@ -96,7 +95,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['AnzahlTodesfall']"
+									"path": "['attributes']['AnzahlTodesfall']"
 								},
 								"sink": {
 									"name": "AnzahlTodesfall",
@@ -105,7 +104,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['ObjectId']"
+									"path": "['attributes']['ObjectId']"
 								},
 								"sink": {
 									"name": "ObjectId",
@@ -114,7 +113,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Meldedatum']"
+									"path": "['attributes']['Meldedatum']"
 								},
 								"sink": {
 									"name": "Meldedatum",
@@ -123,7 +122,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['IdLandkreis']"
+									"path": "['attributes']['IdLandkreis']"
 								},
 								"sink": {
 									"name": "IdLandkreis",
@@ -132,7 +131,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Datenstand']"
+									"path": "['attributes']['Datenstand']"
 								},
 								"sink": {
 									"name": "Datenstand",
@@ -141,7 +140,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['NeuerFall']"
+									"path": "['attributes']['NeuerFall']"
 								},
 								"sink": {
 									"name": "NeuerFall",
@@ -150,7 +149,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['NeuerTodesfall']"
+									"path": "['attributes']['NeuerTodesfall']"
 								},
 								"sink": {
 									"name": "NeuerTodesfall",
@@ -159,7 +158,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Refdatum']"
+									"path": "['attributes']['Refdatum']"
 								},
 								"sink": {
 									"name": "Refdatum",
@@ -168,7 +167,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['NeuGenesen']"
+									"path": "['attributes']['NeuGenesen']"
 								},
 								"sink": {
 									"name": "NeuGenesen",
@@ -177,7 +176,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['AnzahlGenesen']"
+									"path": "['attributes']['AnzahlGenesen']"
 								},
 								"sink": {
 									"name": "AnzahlGenesen",
@@ -186,7 +185,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['IstErkrankungsbeginn']"
+									"path": "['attributes']['IstErkrankungsbeginn']"
 								},
 								"sink": {
 									"name": "istErkrungsbegin",
@@ -195,7 +194,7 @@
 							},
 							{
 								"source": {
-									"path": "$['features'][0]['attributes']['Altersgruppe2']"
+									"path": "['attributes']['Altersgruppe2']"
 								},
 								"sink": {
 									"name": "Altergruppe2",
@@ -203,7 +202,7 @@
 								}
 							}
 						],
-						"collectionReference": ""
+						"collectionReference": "$['features']"
 					}
 				},
 				"inputs": [
