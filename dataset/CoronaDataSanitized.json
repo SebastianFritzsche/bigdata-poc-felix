@@ -1,0 +1,12 @@
+{
+	"name": "CoronaDataSanitized",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CoronSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
