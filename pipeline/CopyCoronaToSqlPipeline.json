@@ -1,0 +1,225 @@
+{
+	"name": "CopyCoronaToSqlPipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_s1k",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json"
+					},
+					{
+						"name": "Destination",
+						"value": "corona.REST resource"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['IdBundesland']"
+								},
+								"sink": {
+									"name": "IdBundesland",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Bundesland']"
+								},
+								"sink": {
+									"name": "Bundesland",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Landkreis']"
+								},
+								"sink": {
+									"name": "Landkreis",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Altersgruppe']"
+								},
+								"sink": {
+									"name": "Altergruppe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Geschlecht']"
+								},
+								"sink": {
+									"name": "Geschlecht",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['AnzahlFall']"
+								},
+								"sink": {
+									"name": "AnzahlFall",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['AnzahlTodesfall']"
+								},
+								"sink": {
+									"name": "AnzahlTodesfall",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['ObjectId']"
+								},
+								"sink": {
+									"name": "ObjectId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Meldedatum']"
+								},
+								"sink": {
+									"name": "Meldedatum",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['IdLandkreis']"
+								},
+								"sink": {
+									"name": "IdLandkreis",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Datenstand']"
+								},
+								"sink": {
+									"name": "Datenstand",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['NeuerFall']"
+								},
+								"sink": {
+									"name": "NeuerFall",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['NeuerTodesfall']"
+								},
+								"sink": {
+									"name": "NeuerTodesfall",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Refdatum']"
+								},
+								"sink": {
+									"name": "Refdatum",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['NeuGenesen']"
+								},
+								"sink": {
+									"name": "NeuGenesen",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['AnzahlGenesen']"
+								},
+								"sink": {
+									"name": "AnzahlGenesen",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['IstErkrankungsbeginn']"
+								},
+								"sink": {
+									"name": "istErkrungsbegin",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['features'][0]['attributes']['Altersgruppe2']"
+								},
+								"sink": {
+									"name": "Altergruppe2",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_s1k",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_s1k",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

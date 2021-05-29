@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_s1k",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CoronSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "corona",
+			"table": "REST resource"
+		}
+	}
+}
