@@ -207,7 +207,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_s1k",
+						"referenceName": "RawCoronaDataset",
 						"type": "DatasetReference"
 					}
 				],
