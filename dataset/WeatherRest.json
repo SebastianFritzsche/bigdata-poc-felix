@@ -1,0 +1,32 @@
+{
+	"name": "WeatherRest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WeatherService",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"city": "Chemnitz",
+				"date": "2021-06-05"
+			}
+		},
+		"parameters": {
+			"city": {
+				"type": "string",
+				"defaultValue": "Chemnitz"
+			},
+			"date": {
+				"type": "string",
+				"defaultValue": "2021-06-05"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('data/2.5/weather?q=',dataset().city,'&APPID=b47311ce955b57c02f680d86896f3339')",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
