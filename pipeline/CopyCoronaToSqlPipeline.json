@@ -239,7 +239,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow1",
+						"referenceName": "SanatizeCoronaData",
 						"type": "DataFlowReference"
 					},
 					"compute": {
