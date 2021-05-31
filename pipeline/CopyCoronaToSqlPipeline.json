@@ -223,7 +223,7 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "Copy_s1k",
+						"activity": "Truncate Table",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -266,7 +266,7 @@
 						"value": "@activity('Lookup1').output.Value",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "dataflow2",
@@ -353,6 +353,33 @@
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Truncate Table",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy_s1k",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[truncateCoronaRaw]"
+				},
+				"linkedServiceName": {
+					"referenceName": "CoronSqlDatabase",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
