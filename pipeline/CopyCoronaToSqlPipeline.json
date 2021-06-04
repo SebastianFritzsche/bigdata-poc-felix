@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_s1k",
+				"name": "GetRawCoronaData",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -316,7 +316,14 @@
 							"inputs": [
 								{
 									"referenceName": "WeatherRest",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"city": {
+											"value": "@item()",
+											"type": "Expression"
+										},
+										"date": "2021-06-05"
+									}
 								}
 							]
 						}
@@ -360,7 +367,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Copy_s1k",
+						"activity": "GetRawCoronaData",
 						"dependencyConditions": [
 							"Succeeded"
 						]
