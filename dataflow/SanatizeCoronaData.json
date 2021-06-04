@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DestinationDataset_s1k",
+						"referenceName": "CoronaDatenset",
 						"type": "DatasetReference"
 					},
 					"name": "CoronaDaten"
@@ -29,7 +29,7 @@
 					"name": "AbgeleiteteSpalte1"
 				}
 			],
-			"script": "source(output(\n\t\tIdBundesland as long,\n\t\tBundesland as string,\n\t\tLandkreis as string,\n\t\tAltergruppe as string,\n\t\tGeschlecht as string,\n\t\tAnzahlFall as long,\n\t\tAnzahlTodesfall as long,\n\t\tObjectId as long,\n\t\tMeldedatum as long,\n\t\tIdLandkreis as string,\n\t\tDatenstand as string,\n\t\tNeuerFall as long,\n\t\tNeuerTodesfall as long,\n\t\tRefdatum as long,\n\t\tNeuGenesen as long,\n\t\tAnzahlGenesen as long,\n\t\tistErkrungsbegin as long,\n\t\tAltergruppe2 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> CoronaDaten\nAbgeleiteteSpalte1 aggregate(groupBy(Landkreis,\n\t\tMeldedatum = toTimestamp(Meldedatum)),\n\tAnzahlFall = sum(AnzahlFall),\n\t\tTodesfall = sum(Todesfall),\n\t\teach(match(name != 'AnzahlFall' && name != 'Todesfall' && name != 'AnzahlTodesfall' && name != 'Meldedatum' && name != 'Landkreis'), $$ = first($$))) ~> Aggregat1\nCoronaDaten derive(Todesfall = iif(greaterOrEqual(NeuerTodesfall, 0), NeuerTodesfall, 0l)) ~> AbgeleiteteSpalte1\nAggregat1 sink(input(\n\t\tLandkreis as string,\n\t\tMeldedatum as date,\n\t\tAnzahlFall as integer,\n\t\tTodesfall as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
+			"script": "source(output(\n\t\tIdBundesland as long,\n\t\tBundesland as string,\n\t\tLandkreis as string,\n\t\tAltergruppe as string,\n\t\tGeschlecht as string,\n\t\tAnzahlFall as long,\n\t\tAnzahlTodesfall as long,\n\t\tObjectId as long,\n\t\tMeldedatum as long,\n\t\tIdLandkreis as string,\n\t\tDatenstand as string,\n\t\tNeuerFall as long,\n\t\tNeuerTodesfall as long,\n\t\tRefdatum as long,\n\t\tNeuGenesen as long,\n\t\tAnzahlGenesen as long,\n\t\tistErkrungsbegin as long,\n\t\tAltergruppe2 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> CoronaDaten\nAbgeleiteteSpalte1 aggregate(groupBy(Landkreis,\n\t\tMeldedatum = toTimestamp(Meldedatum)),\n\tAnzahlFall = sum(AnzahlFall),\n\t\tTodesfall = sum(Todesfall),\n\t\teach(match(name!='AnzahlFall'&&name!='Todesfall'&&name!='AnzahlTodesfall'&&name!='Meldedatum'&&name!='Landkreis'), $$ = first($$))) ~> Aggregat1\nCoronaDaten derive(Todesfall = iif(greaterOrEqual(NeuerTodesfall, 0), NeuerTodesfall, 0l)) ~> AbgeleiteteSpalte1\nAggregat1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tLandkreis as string,\n\t\tMeldedatum as date,\n\t\tAnzahlFall as integer,\n\t\tTodesfall as integer\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
 		}
 	}
 }
