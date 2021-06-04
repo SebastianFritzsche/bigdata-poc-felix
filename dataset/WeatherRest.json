@@ -23,7 +23,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('data/2.5/weather?q=',dataset().city,'&APPID=b47311ce955b57c02f680d86896f3339')",
+				"value": "@concat('/data/2.5/weather?q=',dataset().city,'&appid=b47311ce955b57c02f680d86896f3339')",
 				"type": "Expression"
 			}
 		},

@@ -311,6 +311,9 @@
 									"requestInterval": "00.00:00:00.010",
 									"requestMethod": "GET"
 								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -319,11 +322,17 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"city": {
-											"value": "@item()",
+											"value": "Chemnitz",
 											"type": "Expression"
 										},
 										"date": "2021-06-05"
 									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "CoronaDatenset",
+									"type": "DatasetReference"
 								}
 							]
 						}
