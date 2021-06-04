@@ -298,51 +298,64 @@
 										{
 											"source": {
 												"path": "$['main']['temp']"
+											},
+											"sink": {
+												"name": "temp",
+												"type": "Double"
 											}
 										},
 										{
 											"source": {
 												"path": "$['main']['temp_min']"
+											},
+											"sink": {
+												"name": "temp_min",
+												"type": "Double"
 											}
 										},
 										{
 											"source": {
 												"path": "$['main']['temp_max']"
+											},
+											"sink": {
+												"name": "temp_max",
+												"type": "Double"
 											}
 										},
 										{
 											"source": {
 												"path": "$['main']['pressure']"
+											},
+											"sink": {
+												"name": "pressure",
+												"type": "Int64"
 											}
 										},
 										{
 											"source": {
 												"path": "$['main']['humidity']"
+											},
+											"sink": {
+												"name": "humidity",
+												"type": "Int64"
 											}
 										},
 										{
 											"source": {
 												"path": "$['main']['sea_level']"
+											},
+											"sink": {
+												"name": "sea_level",
+												"type": "Int64"
 											}
 										},
 										{
 											"source": {
 												"path": "$['main']['grnd_level']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['wind']['speed']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['wind']['deg']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['wind']['gust']"
+											},
+											"sink": {
+												"name": "grnd_level",
+												"type": "Int64"
 											}
 										}
 									]
