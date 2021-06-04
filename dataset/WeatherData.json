@@ -1,0 +1,16 @@
+{
+	"name": "WeatherData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CoronSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "weather",
+			"table": "raw"
+		}
+	}
+}
