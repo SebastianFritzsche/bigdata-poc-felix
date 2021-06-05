@@ -223,7 +223,7 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "Truncate Table",
+						"activity": "GetRawCoronaData",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -389,7 +389,7 @@
 				"type": "Lookup",
 				"dependsOn": [
 					{
-						"activity": "SanatizeCoronaData",
+						"activity": "Truncate Table",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -421,7 +421,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "GetRawCoronaData",
+						"activity": "SanatizeCoronaData",
 						"dependencyConditions": [
 							"Succeeded"
 						]
