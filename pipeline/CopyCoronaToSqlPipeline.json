@@ -367,10 +367,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"city": {
-											"value": "@item().Landkreis",
+											"value": "@substring(item().Landkreis, 2, length(item().Landkreis))",
 											"type": "Expression"
 										},
-										"date": "2021-06-05"
+										"date": "@item().Meldedatum"
 									}
 								}
 							],
