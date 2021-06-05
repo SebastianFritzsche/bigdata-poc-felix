@@ -367,7 +367,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"city": {
-											"value": "@item().temp",
+											"value": "@item().Landkreis",
 											"type": "Expression"
 										},
 										"date": "2021-06-05"
