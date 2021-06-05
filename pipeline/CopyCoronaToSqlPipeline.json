@@ -383,7 +383,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"city": {
-											"value": "@substring(item().Landkreis, 2, length(item().Landkreis))",
+											"value": "@item().Landkreis",
 											"type": "Expression"
 										},
 										"date": "@item().Meldedatum"
