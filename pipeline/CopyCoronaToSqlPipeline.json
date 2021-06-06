@@ -329,6 +329,11 @@
 										},
 										{
 											"source": {
+												"path": "$['main']['feels_like']"
+											}
+										},
+										{
+											"source": {
 												"path": "$['main']['temp_min']"
 											},
 											"sink": {
@@ -365,25 +370,82 @@
 										},
 										{
 											"source": {
-												"path": "$['main']['sea_level']"
-											},
-											"sink": {
-												"name": "sea_level",
-												"type": "Int64"
+												"path": "$['visibility']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['main']['grnd_level']"
-											},
-											"sink": {
-												"name": "grnd_level",
-												"type": "Int64"
+												"path": "$['wind']['speed']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['@item().Bundesland']"
+												"path": "$['wind']['deg']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['rain']['1h']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['clouds']['all']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['dt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['sys']['type']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['sys']['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['sys']['country']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['sys']['sunrise']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['sys']['sunset']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['timezone']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['name']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['cod']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Bundesland']"
 											},
 											"sink": {
 												"name": "Bundesland",
@@ -392,14 +454,11 @@
 										},
 										{
 											"source": {
-												"path": "$['@item().Meldedatum']"
-											},
-											"sink": {
-												"name": "Meldedatum",
-												"type": "DateTime"
+												"path": "$['Datum']"
 											}
 										}
-									]
+									],
+									"collectionReference": ""
 								}
 							},
 							"inputs": [
