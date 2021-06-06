@@ -254,7 +254,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
+						"activity": "LookUpCoronaData",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -401,7 +401,7 @@
 				}
 			},
 			{
-				"name": "Lookup1",
+				"name": "LookUpCoronaData",
 				"type": "Lookup",
 				"dependsOn": [
 					{
