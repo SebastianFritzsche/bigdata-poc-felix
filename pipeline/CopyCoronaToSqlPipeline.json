@@ -329,11 +329,6 @@
 										},
 										{
 											"source": {
-												"path": "$['main']['feels_like']"
-											}
-										},
-										{
-											"source": {
 												"path": "$['main']['temp_min']"
 											},
 											"sink": {
@@ -370,26 +365,6 @@
 										},
 										{
 											"source": {
-												"path": "$['visibility']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['wind']['speed']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['wind']['deg']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['rain']['1h']"
-											}
-										},
-										{
-											"source": {
 												"path": "$['Bundesland']"
 											},
 											"sink": {
@@ -400,6 +375,10 @@
 										{
 											"source": {
 												"path": "$['Datum']"
+											},
+											"sink": {
+												"name": "Meldedatum",
+												"type": "DateTime"
 											}
 										}
 									],
