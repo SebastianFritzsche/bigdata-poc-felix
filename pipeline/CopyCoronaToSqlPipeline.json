@@ -292,9 +292,9 @@
 									"type": "RestSource",
 									"additionalColumns": [
 										{
-											"name": "Landkreis",
+											"name": "Bundesland",
 											"value": {
-												"value": "@item().Landkreis",
+												"value": "@item().Bundesland",
 												"type": "Expression"
 											}
 										},
@@ -390,7 +390,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"city": {
-											"value": "@item().Landkreis",
+											"value": "@item().Bundesland",
 											"type": "Expression"
 										},
 										"date": "@item().Meldedatum"
