@@ -5,7 +5,7 @@
 			"referenceName": "WeatherService",
 			"type": "LinkedServiceReference",
 			"parameters": {
-				"city": "Chemnitz",
+				"city": "Sachsen",
 				"date": "2021-06-05"
 			}
 		},
