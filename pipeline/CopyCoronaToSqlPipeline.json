@@ -390,61 +390,6 @@
 										},
 										{
 											"source": {
-												"path": "$['clouds']['all']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['dt']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['sys']['type']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['sys']['id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['sys']['country']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['sys']['sunrise']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['sys']['sunset']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['timezone']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['name']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['cod']"
-											}
-										},
-										{
-											"source": {
 												"path": "$['Bundesland']"
 											},
 											"sink": {
