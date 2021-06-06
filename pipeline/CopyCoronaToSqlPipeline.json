@@ -270,7 +270,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1').output.Value",
+						"value": "@activity('LookUpCoronaData').output.Value",
 						"type": "Expression"
 					},
 					"isSequential": false,
