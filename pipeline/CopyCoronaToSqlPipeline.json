@@ -383,19 +383,19 @@
 										},
 										{
 											"source": {
-												"path": "$['Bundesland']"
+												"path": "$['@item().Bundesland']"
 											},
 											"sink": {
-												"name": "@item().Bundesland",
+												"name": "Bundesland",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Meldedatum']"
+												"path": "$['@item().Meldedatum']"
 											},
 											"sink": {
-												"name": "@item().Meldedatum",
+												"name": "Meldedatum",
 												"type": "DateTime"
 											}
 										}
