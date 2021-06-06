@@ -380,6 +380,24 @@
 												"name": "grnd_level",
 												"type": "Int64"
 											}
+										},
+										{
+											"source": {
+												"path": "$['Bundesland']"
+											},
+											"sink": {
+												"name": "@item().Bundesland",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Meldedatum']"
+											},
+											"sink": {
+												"name": "@item().Meldedatum",
+												"type": "DateTime"
+											}
 										}
 									]
 								}
