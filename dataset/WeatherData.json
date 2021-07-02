@@ -2,7 +2,7 @@
 	"name": "WeatherData",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "CoronSqlDatabase",
+			"referenceName": "AzureSqlDatabase1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
