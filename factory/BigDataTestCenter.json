@@ -1,0 +1,9 @@
+{
+	"name": "BigDataTestCenter",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "634edbec-75e3-4dc5-b3ac-286f3c82c5fb",
+		"tenantId": "92bbe80f-b5c8-4650-bbfb-26cbf84f12e2"
+	}
+}
